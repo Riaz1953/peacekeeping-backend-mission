@@ -3,6 +3,13 @@ import cors from "cors";
 
 const app = express();
 
+// Allowed origins define kora holo
+const allowedOrigins = [
+  "https://peacekeeping-mission.netlify.app",
+  "http://localhost:3000",
+  process.env.CORS_ORIGIN,
+].filter(Boolean);
+
 app.use(
   cors({
     origin: function (origin, callback) {
